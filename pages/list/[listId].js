@@ -34,9 +34,9 @@ export async function getStaticPaths(){
 
     client.close();
     return {
-        fallback: false,
+        fallback: 'blocking',
         paths: lists.map((list)=> ({params: {listId: list._id.toString()},     
-    }))
+    })) 
     }
 }
 export async function getStaticProps(context){
